@@ -50,6 +50,13 @@ It is built with **C#**, **WPF**, and **.NET 8**.
 - .NET 8 SDK.
 - Visual Studio 2022 with the **.NET desktop development** workload (recommended).
 
+### Download from "Releases"
+
+1. Tap to v0.2.1
+2. Download ANUXES-LOGLENS v0.2.1.zip
+3. Unzip
+4. Open `ANUXES.LOGLENS.exe`
+
 ### Run from Visual Studio
 
 1. Clone the repository:
