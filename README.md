@@ -137,7 +137,7 @@ See [CHANGELOG.md](CHANGELOG.md) for release notes.
 
 | Role | Name |
 |---|---|
-| Publisher | **ANUXES DIVISION** |
+| Publisher | **ANUXES DIVISION (me)** |
 | Developer | **Kas1mov** |
 
 ## License
@@ -150,6 +150,6 @@ No open-source license has been granted for this repository. Unless a license is
 
 **ANUXES LOGLENS** · Log Analysis System · `v0.2.1`
 
-*Published by ANUXES DIVISION · Developed by Kas1mov*
+*Published by ANUXES DIVISION (me) · Developed by Kas1mov*
 
 </div>
