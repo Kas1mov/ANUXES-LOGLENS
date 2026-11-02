@@ -20,7 +20,6 @@
 <img width="1373" height="843" alt="Screenshot_3619" src="https://github.com/user-attachments/assets/833b7f09-44eb-4446-a994-bf3ac024575b" />
 
 
-<sub>Interface preview from v0.2.0. The current release is v0.2.1.</sub>
 
 </div>
 
