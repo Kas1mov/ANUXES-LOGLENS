@@ -1,0 +1,10 @@
+2026-11-02 14:32:01.112 INFO Application started
+2026-11-02 14:32:02.005 DEBUG Loading configuration from appsettings.json
+2026-11-02 14:32:02.882 INFO Configuration loaded successfully
+2026-11-02 14:32:04.014 WARN Cache directory is missing; using temporary storage
+2026-11-02 14:32:05.446 ERROR Failed to connect to local service
+2026-11-02 14:32:06.102 DEBUG Retrying connection attempt 1/3
+2026-11-02 14:32:07.331 INFO Connection established
+2026-11-02 14:32:08.918 TRACE Request pipeline entered
+2026-11-02 14:32:09.002 FATAL Unhandled exception in worker thread
+Plain text line without a timestamp or severity marker

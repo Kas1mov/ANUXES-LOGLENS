@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Anuxes.LogLens</RootNamespace>
+    <AssemblyName>ANUXES.LOGLENS</AssemblyName>
+    <Version>0.2.1</Version>
+    <Company>ANUXES DIVISION</Company>
+    <Product>ANUXES LOGLENS</Product>
+    <Description>Log Analysis System</Description>
+    <Copyright>Copyright © Kas1mov</Copyright>
+  </PropertyGroup>
+</Project>
