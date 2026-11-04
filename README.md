@@ -6,12 +6,15 @@
 
 **Inspect. Verify. Track. Understand.**
 
-![Version](https://img.shields.io/badge/version-0.1.2-9B75FF?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-0.1.1-9B75FF?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Windows-263A63?style=for-the-badge&logo=windows)
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet)
 ![UI](https://img.shields.io/badge/UI-WPF-17151F?style=for-the-badge)
 
 **Publisher:** ANUXES DIVISION · **Developer:** Kas1mov
+
+<img width="1223" height="805" alt="Screenshot_3620" src="https://github.com/user-attachments/assets/e071fac9-35d5-431a-a3ac-52aa895ba9cb" />
+
 
 ---
 
@@ -134,7 +137,7 @@ No open-source license has been granted for this repository. Unless a license is
 
 <div align="center">
 
-**ANUXES AFTERTRACE** · File Inspection & Change Tracking · `v0.1.2`
+**ANUXES AFTERTRACE** · File Inspection & Change Tracking · `v0.1.1`
 
 *Published by ANUXES DIVISION · Developed by Kas1mov*
 
