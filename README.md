@@ -4,7 +4,7 @@
 
 ### A lightweight file inspection and change tracking tool for Windows
 
-**Inspect. Verify. Track. Understand.**
+**Inspect. Compare. Understand.**
 
 ![Version](https://img.shields.io/badge/version-0.1.1-9B75FF?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Windows-263A63?style=for-the-badge&logo=windows)
