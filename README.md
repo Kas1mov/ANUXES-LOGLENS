@@ -1,46 +1,44 @@
 <div align="center">
 
-# ANUXES AFTERTRACE
+# ANUXES LOGLENS
 
-### A lightweight file inspection and change tracking tool for Windows
+### A lightweight desktop log analysis tool for Windows
 
-**Inspect. Compare. Understand.**
+**Read. Filter. Inspect. Understand.**
 
-![Version](https://img.shields.io/badge/version-0.1.1-9B75FF?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-0.2.1-9B75FF?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Windows-263A63?style=for-the-badge&logo=windows)
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet)
 ![UI](https://img.shields.io/badge/UI-WPF-17151F?style=for-the-badge)
 
-**Publisher:** ANUXES DIVISION · **Developer:** Kas1mov
-
-<img width="1231" height="809" alt="Screenshot_3621" src="https://github.com/user-attachments/assets/ee3ccbc7-9ae9-41a0-9f36-45f13c4ab1d2" />
-
+**Publisher:** ANUXES DIVISION  ·  **Developer:** Kas1mov
 
 ---
 
-<!-- Add your application screenshot here -->
+![ANUXES LOGLENS interface](assets/lo-glens-ui-v0.2.0.png)
+
+<sub>Interface preview from v0.2.0. The current release is v0.2.1.</sub>
 
 </div>
 
 ## Overview
 
-**ANUXES AFTERTRACE** is a Windows desktop application for inspecting files and examining their properties, integrity, and changes.
+**ANUXES LOGLENS** is a Windows desktop application for opening, filtering, searching, and inspecting text-based application logs. It combines a log table, severity filters, an entry inspector, error-report export, and a live file monitor in a dark interface with purple accents.
 
-It provides file analysis tools in a dark interface with purple accents, combining file information, SHA-256 verification, digital signature inspection, and file type identification.
-
-Built with **C#**, **WPF**, and **.NET 8**.
+It is built with **C#**, **WPF**, and **.NET 8**.
 
 ## Features
 
 | Feature | Description |
 |---|---|
-| **File inspection** | Select a file and inspect its available properties. |
-| **SHA-256 analysis** | Calculate the file's SHA-256 hash for integrity verification. |
-| **Digital signature** | Inspect available digital signature information. |
-| **File identification** | Examine file headers and identify file types. |
-| **Metadata inspection** | View available file metadata and properties. |
-| **Change Tracking** | Planned snapshot-based comparison of folder contents and file changes. |
-| **Custom interface** | Frameless window controls, purple glow interaction states, and a dark navy interface. |
+| **Log viewer** | Open `.log`, `.txt`, and `.jsonl` files. |
+| **Severity filters** | Filter TRACE, DEBUG, INFO, WARN, ERROR, FATAL, and OTHER / UNPARSED entries. |
+| **Severity overview** | Keep track of ERROR, WARN, and FATAL totals. |
+| **Search** | Case-insensitive search, highlighted matches, and previous / next result navigation. |
+| **Entry Inspector** | Inspect the timestamp, severity, message, and raw text of the selected entry. |
+| **Error report export** | Export ERROR / FATAL entries and related exception or stack-trace lines to TXT. |
+| **Live Monitor** | Watch an opened file for appended lines using filesystem notifications and a polling fallback. |
+| **Custom interface** | Frameless window controls, purple glow interaction states, custom checkboxes, and dark navy scrollbars. |
 
 ## Getting started
 
@@ -50,73 +48,84 @@ Built with **C#**, **WPF**, and **.NET 8**.
 - .NET 8 SDK.
 - Visual Studio 2022 with the **.NET desktop development** workload (recommended).
 
-### Download from Releases
-
-1. Open the repository's **Releases** section.
-2. Download the latest AFTERTRACE release archive.
-3. Extract the archive.
-4. Launch `ANUXES.AFTERTRACE.exe` (if included in the release).
-
 ### Run from Visual Studio
 
 1. Clone the repository:
 
    ```powershell
-   git clone https://github.com/Kas1mov/ANUXES-AFTERTRACE.git
-   cd ANUXES-AFTERTRACE
+   git clone https://github.com/Kas1mov/ANUXES-LOGLENS.git
+   cd ANUXES-LOGLENS
    ```
 
-2. Open the solution or project in Visual Studio 2022.
+2. Open `ANUXES.LOGLENS.sln` in Visual Studio 2022.
 3. Allow NuGet restore to finish.
 4. Select the desired configuration and press **F5**.
 
 ### Build a standalone release
 
-Publish the application from PowerShell:
+Run `Build-EXE.bat` from the project directory, or publish from PowerShell:
 
 ```powershell
-dotnet publish ANUXES.AFTERTRACE.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true
+dotnet publish ANUXES.LOGLENS.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true
+```
+
+The published application is placed in:
+
+```text
+bin\Release\net8.0-windows\win-x64\publish\ANUXES.LOGLENS.exe
 ```
 
 The standalone build includes the .NET runtime and does not require the end user to install it separately.
 
-## How it works
+## Try the sample logs
 
-AFTERTRACE is designed around file inspection and integrity information.
+Sample files are available in the `samples/` directory:
 
-1. Select a file for inspection.
-2. Let the application analyze its available properties.
-3. Review the calculated hash, file identification, signature information, and metadata.
-4. Use the available information to compare or verify the file independently.
+- `clean.log.txt` — routine INFO and DEBUG messages.
+- `errors.log.txt` — sample warnings, errors, a fatal event, and exception details.
+- `live-test.log` — a file for testing Live Monitor.
 
-**Important:** A matching SHA-256 hash indicates identical file contents. It does not, by itself, prove that a file is safe.
+### Test Live Monitor
+
+1. Open `samples/live-test.log` in LOGLENS.
+2. Enable **Live Mode**.
+3. Open PowerShell in the repository directory and run:
+
+   ```powershell
+   powershell -NoProfile -ExecutionPolicy Bypass -File ".\samples\Append-LiveTest.ps1"
+   ```
+
+4. New completed lines should appear while the script appends them. Press `Ctrl+C` in PowerShell to stop the test.
+
+### Test error-report export
+
+1. Open `samples/errors.log.txt`.
+2. Click **Export**.
+3. Choose where to save the TXT report and inspect the exported events and related details.
 
 ## Project structure
 
 ```text
-ANUXES-AFTERTRACE/
-├── Assets/                 # Application icons and visual resources
-├── Models/                 # Data models
-├── Services/               # File inspection services
-├── Views/                  # Application views
+ANUXES-LOGLENS/
+├── assets/                 # Interface screenshots
+├── samples/                # Sample logs and Live Monitor test script
 ├── App.xaml                # WPF application resources
-├── App.xaml.cs             # Application entry point
 ├── MainWindow.xaml         # Main interface
 ├── MainWindow.xaml.cs      # Application logic
-├── ANUXES.AFTERTRACE.csproj
+├── ANUXES.LOGLENS.csproj   # Project configuration
+├── ANUXES.LOGLENS.sln      # Visual Studio solution
+├── Build-EXE.bat           # Release publishing script
 ├── CHANGELOG.md            # Version history
 └── README.md
 ```
 
-*The structure above is a suggested layout and may differ from the actual repository.*
+## Notes and known limitations
 
-## Notes and limitations
-
-- File inspection provides information about a file; it is not a full antivirus or malware detection system.
-- SHA-256 hashes can be used to compare file contents, but a hash alone does not establish whether a file is trustworthy.
-- Digital signature information depends on whether the inspected file contains a supported signature.
-- File metadata may be incomplete or unavailable depending on the file format.
-- Change Tracking is a planned feature and may not be available in the current release.
+- Severity detection uses common level labels such as `TRACE`, `DEBUG`, `INFO`, `WARN`, `WARNING`, `ERROR`, and `FATAL`. It is not a framework-specific log schema parser.
+- Severity overview totals are calculated for the loaded file, independently of the currently visible filters.
+- Error-report export uses heuristics to associate exception and stack-trace details with ERROR / FATAL events. It checks nearby following entries; review reports before sharing them.
+- Live Monitor is intended for files that are appended to. Applications that replace or rewrite an entire file on save may behave differently.
+- JSONL files are currently displayed line by line; structured JSON field inspection is not included in this release.
 
 ## Version history
 
@@ -126,7 +135,7 @@ See [CHANGELOG.md](CHANGELOG.md) for release notes.
 
 | Role | Name |
 |---|---|
-| Publisher | **ANUXES DIVISION** |
+| Publisher | **ANUXES DIVISION (me)** |
 | Developer | **Kas1mov** |
 
 ## License
@@ -137,8 +146,9 @@ No open-source license has been granted for this repository. Unless a license is
 
 <div align="center">
 
-**ANUXES AFTERTRACE** · File Inspection & Change Tracking · `v0.1.1`
+**ANUXES LOGLENS** · Log Analysis System · `v0.2.1`
 
-*Published by ANUXES DIVISION · Developed by Kas1mov*
+*Published by ANUXES DIVISION (me) · Developed by Kas1mov*
 
 </div>
+
