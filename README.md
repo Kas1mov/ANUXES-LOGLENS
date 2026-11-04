@@ -17,7 +17,7 @@
 
 ![ANUXES LOGLENS interface](assets/lo-glens-ui-v0.2.0.png)
 
-<sub>Interface preview from v0.2.0. The current release is v0.2.1.</sub>
+<sub>The current release is v0.2.1.</sub>
 
 </div>
 
