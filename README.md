@@ -13,7 +13,7 @@
 
 **Publisher:** ANUXES DIVISION · **Developer:** Kas1mov
 
-<img width="1223" height="805" alt="Screenshot_3620" src="https://github.com/user-attachments/assets/e071fac9-35d5-431a-a3ac-52aa895ba9cb" />
+<img width="1231" height="809" alt="Screenshot_3621" src="https://github.com/user-attachments/assets/ee3ccbc7-9ae9-41a0-9f36-45f13c4ab1d2" />
 
 
 ---
